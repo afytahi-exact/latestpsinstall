@@ -1,5 +1,5 @@
 $curVer = [string](gcm pwsh -errorAction SilentlyContinue).version
-$latVer = (irm https://raw.githubusercontent.com/PowerShell/PowerShell/master/tools/metadata.json).ReleaseTag -replace "^v"
+$latVer = (irm https://raw.githubusercontent.com/PowerShell/PowerShell/master/tools/metadata.json).ReleaseTag -replace "v"
 
 if (!($curVer -like ($latVer + "*"))) {
 	iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI -Quiet"

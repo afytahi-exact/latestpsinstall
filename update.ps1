@@ -1,0 +1,1 @@
+[string](gcm pwsh -errorAction SilentlyContinue).version | ? {if (!($_ -like (((irm https://raw.githubusercontent.com/PowerShell/PowerShell/master/tools/metadata.json).ReleaseTag -replace '^v') + "*"))) {iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI -Quiet"}}
